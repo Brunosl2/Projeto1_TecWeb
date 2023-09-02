@@ -52,6 +52,14 @@ Algumas informações úteis e dicas:
  .btn > * {
    width: 100%;
  }
+
+ .btn-delete {
+  display: flex;
+  width: 3 rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+ }
  
  .btn:before {
    content: "";
