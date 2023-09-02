@@ -55,10 +55,10 @@ Algumas informações úteis e dicas:
 
  .btn-delete {
   display: flex;
-  width: 3 rem;
+  width: 3rem;
   height: 3rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
  }
  
  .btn:before {

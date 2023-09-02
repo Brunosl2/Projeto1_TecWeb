@@ -1,5 +1,5 @@
 import json
-from data.database import Database
+from data.database import Note, Database
 
 db = Database('banco')
 
@@ -19,7 +19,7 @@ def load_template(file):
         return str(f.read())
     
 def load_params(params):
-    db.add(params)
+    db.add(Note(title=params['titulo'], content=params['detalhes']))
         
 def build_response(body='', code=200, reason='OK', headers=''):
     if headers == '':

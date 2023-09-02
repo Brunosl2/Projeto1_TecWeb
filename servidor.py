@@ -1,7 +1,7 @@
 import socket
 from pathlib import Path
 from utils import extract_route, read_file, build_response
-from views import index, delete
+from views import index, edit
 
 CUR_DIR = Path(__file__).parent
 SERVER_HOST = 'localhost'
@@ -22,15 +22,17 @@ while True:
     print(request)
 
     route = extract_route(request)
-
+    print(route)
     filepath = CUR_DIR / route
     if filepath.is_file():
         response = build_response() + read_file(filepath)
     elif route == '':
         response = index(request)
     elif route.startswith('delete'):
+        response = index(request)
+    elif route.startswith('edit'):
         id = int(route.split('/')[-1])
-        response = delete(id)
+        response = edit(request, id)
     else:
         response = build_response(code = '404', reason="Not Found")
     
