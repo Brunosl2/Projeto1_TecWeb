@@ -35,6 +35,18 @@ class Database:
         values = (note_id,)
         self.conn.execute(delete, values)
         self.conn.commit()
+    def get(self, index):
+        cursor = self.conn.execute(
+            "SELECT id, title, content FROM note")
+        
+        for linha in cursor:
+            id = linha[0]
+            title = linha[1]
+            content = linha[2]
+            if id == index:
+                return Note(id=id, title=title, content=content)
+        return None
+    
 @dataclass
 class Note:
     id: int = None

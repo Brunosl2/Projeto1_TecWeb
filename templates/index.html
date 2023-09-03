@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="templates/components/getit.css" />
+    <link rel="stylesheet" href="/templates/components/getit.css" />
   </head>
 
   <body>
@@ -26,7 +26,7 @@
 
     <main class="container">
       <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
-      <form method="post" class="form-card">
+      <form method= 'post' class="form-card">
         <input
           class="form-card-title"
           type="text"
@@ -41,11 +41,12 @@
         <button class="btn" type="submit">Criar</button>
       </form>
 
-      <ul class="card-container">
+      <ul class = 'card-container'>
         {notes}
       </ul>
+
     </main>
 
-    <script type="text/javascript" src="templates/components/getit.js"></script>
+    <script type="text/javascript" src="/templates/components/getit.js"></script>
   </body>
 </html>

@@ -15,33 +15,36 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="templates/components/getit.css" />
+    <link rel="stylesheet" href="/templates/components/getit.css" />
   </head>
 
   <body>
     <div class="appbar">
-      <img src="img/logo-getit.png" class="logo" />
+      <img src="/img/logo-getit.png" class="logo" />
       <span class="subtitle">Como o Post-it, mas com outro verbo</span>
     </div>
 
     <main class="container">
-      <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
       <form method= 'post' action="" class="form-card">
         <input
           class="form-card-title"
           type="text"
           name="titulo"
-          placeholder="Título"
+          value={title}
         />
         <textarea
           class="autoresize"
           name="detalhes"
-          placeholder="Digite o conteúdo..."
-        ></textarea>
-        <button class="btn" type="submit">Criar</button>
+        >{details}
+      </textarea>
+      <div class = "btn-box">
+        <button class="btn" type="submit">Alterar</button>
+        <button class="btn" type="submit" href="templates/index.html">Cancelar</button>
+      </div>
       </form>
+      
     </main>
 
-    <script type="text/javascript" src="templates/components/getit.js"></script>
+    <script type="text/javascript" src="/templates/components/getit.js"></script>
   </body>
 </html>
